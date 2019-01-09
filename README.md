@@ -1,5 +1,5 @@
 # CoAP.NET Example
-Example for CoAP.NET(.Core) library.
+Example for CoAP.NET(.Core) library (http://open.smeshlink.com/CoAP.NET/).
 This example is for .NET Core 2.x, but the usage of the libraries present should be almost, if not exactly, the same as with latest standard .NET.
 
 
