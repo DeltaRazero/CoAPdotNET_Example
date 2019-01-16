@@ -13,18 +13,18 @@ namespace Server
             // For standard .NET, use CoAP.NET
 
 
-            // Start server with specified ports
+            // Start the reciever with specified ports.
             // The IP is set to local host here
-            var server = new CoAP.Server.CoapServer(5683);
+            var coap_receiver = new CoAP.Server.CoapServer(5683);
 
             // Add the resource classes.
             // These will handle the incoming requests of specific devices, sensors, actuators or whatever thing.
-            server.Add(new HelloWorldResource() );
-            server.Add(new JsonObjectResource() );
-            server.Add(new MessageResource() );
+            coap_receiver.Add(new HelloWorldResource() );
+            coap_receiver.Add(new JsonObjectResource() );
+            coap_receiver.Add(new MessageResource() );
 
-            // Start up the server
-            server.Start();
+            // Start the listener/receiver thread 
+            coap_receiver.Start();
 
 
             Thread.Sleep(-1); // Freeze thread

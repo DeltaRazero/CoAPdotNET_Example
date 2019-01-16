@@ -14,14 +14,14 @@ namespace Client
             // For standard .NET, use CoAP.NET
 
 
-            // Setup client
-            var client = new CoAP.CoapClient();
+            // Setup sender
+            var coap_sender = new CoAP.CoapClient();
 
             // You can set the the URL here or set it per request (see below)
-            client.Uri = new Uri("coap://127.0.0.1/helloworld");
+            coap_sender.Uri = new Uri("coap://127.0.0.1/helloworld");
 
             // You can send a request with the Uri that is already set in the CoapClient object
-            var response= client.Get();
+            var response= coap_sender.Get();
 
             // The result's string (a.k.a. the payload string)
             Console.WriteLine(response.PayloadString);
@@ -37,7 +37,7 @@ namespace Client
             request.URI = new Uri("coap://127.0.0.1/message");
 
             // You can attach a payload (bytes) or payloadstring (obviously string) to a request obj
-            request.SetPayload("This is a message from the client");
+            request.SetPayload("This is a message from the sender");
 
             // Send the request
             request.Send();
